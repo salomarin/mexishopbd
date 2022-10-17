@@ -1,6 +1,7 @@
 package org.mexishop.mexishop.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.mexishop.mexishop.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,21 +40,31 @@ public class UsuarioService {
 		return usuarioRepository.save(usuario);
 	}//addProducto
 	
-	public Usuario updateUsuario(Integer id, String nombre, String tel, 
-			String email, String contrasena) {
+	public Usuario updateUsuario(Integer id, String contrasena, String newContrasena) {
 		Usuario tmpUser = null;
 		if(usuarioRepository.existsById(id)) {
 			tmpUser = usuarioRepository.findById(id).get();
-			if(nombre!=null) tmpUser.setNombre(nombre);
-			if(tel!=null) tmpUser.setTel(tel);
-			if(email!=null) tmpUser.setEmail(email);
-			if(contrasena!=null) tmpUser.setContrasena(contrasena);
-			usuarioRepository.save(tmpUser);
-		}else {
-			System.out.println("Update - El usuario con el id " + id + " no existe");
-		}//if exist
-		return tmpUser;
-	}//updateProducto
+			if((contrasena!=null) && (newContrasena!=null)){
+			    if (contrasena.equals(tmpUser.getContrasena())) {//si el password es correcto
+			     tmpUser.setContrasena(newContrasena);
+			     usuarioRepository.save(tmpUser);
+			    }//if password.equals
+			   }//if !=null
+			  }//if
+			  return tmpUser;
+			 }//updateUsuario
+	
+	public boolean validaUsuario(Usuario usuario) {
+		 boolean res = false;
+		 Optional<Usuario> userByEmail = usuarioRepository.findByEmail(usuario.getEmail());
+		 if (userByEmail.isPresent()) {
+			 Usuario u = userByEmail.get();
+			 if(u.getContrasena().equals(usuario.getContrasena())) {
+				 res = true;
+			 }//if password
+		 }//if
+		 return res;
+	 }//validateUsuario
 	
 
 }// class UsuarioService
