@@ -37,7 +37,7 @@ public class CategoriasController {
 			return categoriasService.getCategoria(cate_id);
 		} //getProducto
 		
-		@DeleteMapping (path="{catId}") //http://localhost:8080/api/categoria/1
+		@DeleteMapping (path="{catId}") //http://localhost:8080/api/categoria/1 == Colocar Id por borrar
 		public Categoria deleteCategoria(@PathVariable("catId")Integer cate_id) {
 			return categoriasService.deleteCategoria(cate_id);
 		} //deleteProducto
@@ -47,7 +47,7 @@ public class CategoriasController {
 			return categoriasService.addCategoria(categoria);
 		}// addProducto
 		
-		@PutMapping (path="{catId}") //http://localhost:8080/api/categoria/1
+		@PutMapping (path="{catId}") //http://localhost:8080/api/categoria/"1?" + "parametro a editar" + "edicion" == se coloca la edicion en el url
 		public Categoria updateCategoria(@PathVariable("catId")Integer cate_id,
 				@RequestParam (required = false) String nombre_cat) {
 			return	categoriasService.updateCategoria(cate_id, nombre_cat);

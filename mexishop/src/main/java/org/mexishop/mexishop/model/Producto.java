@@ -23,28 +23,25 @@ public class Producto {
 	private int categorias_cate_id;
 	private int precio_prod;
 	
-	public Producto(Integer product_id, String prod_nombr, String prod_Link, String prod_desc, Integer inventario_cant,
-			Integer categorias_cate_id, Integer precio_prod) {
+
+	public Producto(String prod_nombr, String prod_Link, String prod_desc, int inventario_cant,
+			int categorias_cate_id, int precio_prod) {
 		super();
-		this.product_id = product_id;
+		
 		this.prod_nombr = prod_nombr;
 		this.prod_Link = prod_Link;
 		this.prod_desc = prod_desc;
 		this.inventario_cant = inventario_cant;
 		this.categorias_cate_id = categorias_cate_id;
 		this.precio_prod = precio_prod;
-	}//primerConstructor
+	} // constructor 
 
 	public Producto(){}//2doConstructor
 	
    //Getters and Setters
-
-	public int getProduct_id() {
+	
+	public Integer getProduct_id() {
 		return product_id;
-	}
-
-	public void setProduct_id(Integer product_id) {
-		this.product_id = product_id;
 	}
 
 	public String getProd_nombr() {
@@ -95,4 +92,13 @@ public class Producto {
 		this.precio_prod = precio_prod;
 	}
 
+	@Override
+	public String toString() {
+		return "Producto [product_id=" + product_id + ", prod_nombr=" + prod_nombr + ", prod_Link=" + prod_Link
+				+ ", prod_desc=" + prod_desc + ", inventario_cant=" + inventario_cant + ", categorias_cate_id="
+				+ categorias_cate_id + ", precio_prod=" + precio_prod + "]";
+	} //toSString
+
+	
+	
 }//Class Product

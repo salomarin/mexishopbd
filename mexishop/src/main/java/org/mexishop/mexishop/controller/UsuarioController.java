@@ -2,7 +2,7 @@ package org.mexishop.mexishop.controller;
 
 import java.util.List;
 
-
+import org.mexishop.mexishop.model.ChangePassword;
 import org.mexishop.mexishop.model.Usuario;
 import org.mexishop.mexishop.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -50,14 +49,10 @@ public class UsuarioController {
 	
 	@PutMapping(path="{userId}") 
 	public Usuario updateProducto(@PathVariable("userId") Integer id,
-			@RequestParam (required = false) String nombre,
-			@RequestParam (required = false) String tel,
-			@RequestParam (required = false) String email,
-			@RequestParam (required = false) String contrasena) {
-		return usuarioService.updateUsuario(id, nombre, tel, email,contrasena);
+			@RequestBody ChangePassword changePassword)
+			 {
+		return usuarioService.updateUsuario(id, changePassword.getContrasena(),
+			    changePassword.getNewContrasena());
 	}//updateProducto
-	
-	
-	
 	
 }//class UsuarioController

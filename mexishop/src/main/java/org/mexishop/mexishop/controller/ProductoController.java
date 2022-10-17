@@ -39,7 +39,7 @@ public class ProductoController {
 		return productoService.deleteProducto(product_id);
 	}//deleteProducto
 	
-	@PostMapping (path="{prodId}")//http://localhost:8080/api/productos/1
+	@PostMapping 
 	public Producto addProducto(@RequestBody Producto producto){
 		return productoService.addProducto(producto);
 	}
