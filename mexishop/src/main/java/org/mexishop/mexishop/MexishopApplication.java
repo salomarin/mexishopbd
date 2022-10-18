@@ -19,6 +19,8 @@ public class MexishopApplication {
 	      registrationBean.setFilter(new JwtFilter());
 	      registrationBean.addUrlPatterns("/api/productos/*");
 	      registrationBean.addUrlPatterns("/api/user/*");
+	      registrationBean.addUrlPatterns("/api/compra/*");
+	      registrationBean.addUrlPatterns("/api/prod_compra/*");
 	      return registrationBean;
 		} //JwtFilter
 }  //clasAPI

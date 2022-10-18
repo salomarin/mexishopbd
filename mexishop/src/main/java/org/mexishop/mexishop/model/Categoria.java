@@ -16,9 +16,8 @@ public class Categoria {
 		private Integer cate_id; //Read-only
 		private String nombre_cat;
 		
-		public Categoria(Integer cate_id, String nombre_cat) {
+		public Categoria(String nombre_cat) {
 			super();
-			this.cate_id = cate_id;
 			this.nombre_cat = nombre_cat;
 		} //constructor
 
@@ -32,7 +31,7 @@ public class Categoria {
 			this.nombre_cat = nombre_cat;
 		} //setNombre
 
-		public int getCate_id() {
+		public Integer getCate_id() {
 			return cate_id;
 		} //get Id
 
