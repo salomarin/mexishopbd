@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/registroprod.css">
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Registro de productos</title>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/pixel-direction/image/upload/v1664937605/MEXISHOP/as_xuez7v.jpg">
+</head>
+  <body>
+    <!--INICIO Barra de navegación-->
+    <header>
+      <div class="header">
+        <div class="menu-bar">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="../index.html"><img src="https://res.cloudinary.com/pixel-direction/image/upload/v1663025620/MEXISHOP/1ala620_lteygg_vgwjeq.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>               
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                      <a class="nav-link" href="../index.html">INICIO </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">CATÁLOGO</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/pages/catalebrijes.html">Alebrijes</a>
+                        <a class="dropdown-item" href="/pages/catjoyeria.html">Joyería</a>
+                        <a class="dropdown-item" href="/pages/catbarro.html">Barro & Cerámica</a>
+                        
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./nosotros.html">NOSOTROS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./haztesocio.html">HAZTE SOCIO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./contacto.html">CONTÁCTANOS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./login.html"><img src="../src/Unionperfil.png" alt="" class="navimg"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./carrito.html"><img src="../src/Unioncarrito.png" alt="" class="navimg"></a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </div>
+    </header>
+    <!--FIN Barra de navegación-->
+
+
+
+    <main class="contacto"> <!-- INICIO informacion -->
+        <h1 style="margin: 3rem; color:#c2943f;">Añade tu Producto</h1>
+        <section class="row"> <!-- FIN informacion -->
+          <!-- INICIO formulario -->
+          
+          <div class="col-sm-6"> <!-- Inicio Columna -->
+            <h3>VISTA PREVIA</h3>
+              <div id="Preview" class="container row" style="justify-content:center; height: 8cm;"></div>
+          </div>   
+          <!-- Fin columna -->
+          <form class="col-sm-6"> <!-- INICIO columna -->
+            <br>
+            <h3>MANOS A LA OBRA</h3>
+            <h4>NUEVOS PRODUCTOS, NUEVAS SONRISAS</h4>
+            <p>AQUÍ PODRAS DAR DE ALTA NUEVOS ARTÍCULOS, 
+              LOS CUALES SE AGREGARÁN A TU CATÁLOGO, AYUDÁNDONOS A LOGRAR
+              NUESTRO OBJETIVO. PROCURA SER LO MÁS ESPECÍFICO POSIBLE</p>
+            <div class="input-container">
+                <input type="number" id="id" class="text-input" autocomplete="off" placeholder="ID" required />
+                <div class="invalid-feedback">
+                 POR FAVOR VALIDE EL ID 
+                </div>
+            </div>
+            <br>
+            <div class="input-container">
+                <input type="text" id="nameproducto" class="text-input" autocomplete="off" placeholder="Nombre" required />
+                <div class="invalid-feedback">
+                POR FAVOR VALIDE EL NOMBRE
+                </div>
+            </div>
+            <br>
+            <div class="input-container">
+                <input type="url" id="imgproduct" class="text-input" autocomplete="off" placeholder="Link Imagen"
+                required />
+                <div class="invalid-feedback">
+                  POR FAVOR VALIDE EL URL DE IMAGEN
+                </div>
+            </div>
+            <br>
+            <div class="input-container">
+                <input type="number" id="precio" class="text-input" autocomplete="off" placeholder="Precio"
+                required />
+                <div class="invalid-feedback">
+                  POR FAVOR VALIDE EL PRECIO DEL PRODUCTO
+                </div>
+            </div>
+            <br>
+            <div class="input-container">
+                <textarea type="text" id="comentarios" class="text-input" autocomplete="off" placeholder="Escribe tu mensaje" required style="height: 150px"></textarea>
+                <div class="invalid-feedback">
+                  POR FAVOR ESCRIBA UNA DESCRIPCION VALIDA
+                </div>
+            </div>
+
+            <div class="input-container">
+            <button type="button" class="btn btn-primary" id="btnSubmit" style="background-color: #282F36; color: #c2943f; border: 2px solid #c2943f;">Enviar</button>
+            <button type="button" class="btn btn-primary" id="btnMostrar" style="background-color: #282F36; color: #c2943f; border: 2px solid #c2943f;">Vista Previa</button>
+            </div>
+          </form> <!-- FIN columna -->
+          <!-- FINAL formulario -->
+  <br>
+          
+  </main>
+  <section>
+
+  <table class="table table-responsive" id="tabla"></table>
+  </section>  
+    <footer>
+        <div class="copy">
+            <p>Copyright © Generation México 2022. All rights reserved.</p>
+        </div>
+        <div class="flex-container">
+            <div class="seguir">
+            <p class="ya">¿Ya nos sigues?</p>
+            </div>
+                <div>
+                <a href="http://facebook.com/" ><svg xmlns="http://www.w3.org/2000/svg"  class="facebook" width="35" height="35"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#E8AF4E" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                  </svg></a>
+                <a href="http://instagram.com/" ><svg xmlns="http://www.w3.org/2000/svg"  class="facebook" width="35" height="35"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#E8AF4E" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <rect x="4" y="4" width="16" height="16" rx="4" />
+                    <circle cx="12" cy="12" r="3" />
+                    <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                  </svg></a>
+                </div>
+        </div>
+       
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/registroprod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
+</html>
