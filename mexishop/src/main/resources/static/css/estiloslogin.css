@@ -1,0 +1,256 @@
+/*Navbar*/
+h2 {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+
+}
+.dropdown-menu {
+    background-color: #282F36;
+  
+  }
+  
+  .dropdown-item {
+    color: #C2943F !important; 
+    font-family: 'Carrois Gothic SC', sans-serif;
+  
+  }
+  /*Navbar*/
+  
+  /*Body*/
+  body {     
+    background-image: url(../src/FondoEdit.png) !important;  
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000000;
+  }
+  
+  /* New Nav bootstrap*/
+  * {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    }
+    
+    .menu-bar {
+     background-color: #282f36;
+     
+    }
+    .nav-link {
+     font-size: 16px;
+     margin: 5px;
+     color: #e8af4e!important;
+     font-weight: 500;
+    }
+    
+    .navbar-nav {
+     text-align: right;
+     margin-right: 20px;
+    }
+    
+    .menu-bar .navbar-toggler {
+     padding-right: 20px;
+     outline: none!important;
+     border: none!important;
+     color: #e8af4e;
+    }
+    
+    .navbar .fa {
+     color: #e8af4e;
+     font-size: 26px;
+    }
+    
+    
+    .nav-link:hover {
+     font-weight: 600;
+     border-bottom: 1px solid #e8af4e;
+    }
+    
+    .navbar-brand img{
+     width: 80px;
+     margin-top: 5px;
+     margin-left: 20px;
+    }
+    @media only screen and (max-width: 1000px) {
+     .nav-link:hover {
+         border-bottom: none!important;
+     }
+    }
+  
+  /*estilos del footer*/
+  footer{
+    height: 70px;
+    background-color: #282F36;
+    }
+    .flex-container{
+      
+    flex-direction: column;
+    float: right;
+    color: #E8AF4E;
+    justify-content: center;
+    padding: 1px;
+    }
+    
+    .seguir .ya{
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    margin: 0px;    
+    }
+    .facebook {
+    padding-left: 22px;              
+    padding-left: 10px;         
+    
+    
+    }   
+    .facebook:hover{
+    transition: transform 0.3s;
+    transform: scale(1.5);
+    
+    }
+    a.nav-link img{
+    width: 30px;
+    padding: 2px;
+    }
+    
+    .navimg:hover{
+    transition: transform 0.2s;
+    transform: scale(1.5);
+    
+    }
+    
+    .copy p{
+    padding-left: 15px;
+    padding-top: 22px;
+    float: left;
+    color: #E8AF4E;
+    font-size: 16px;
+    }
+    
+    .seguir .ya{
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    margin: 0px;    
+    }
+    
+    @media (max-width: 680px) {
+    .copy p{
+      font-size: 12px;
+      width: 65%;
+    }
+    
+    .ya {
+      font-size: 12px;
+    }
+    }
+  /* Navbar Log in - Registrarme*/
+  
+  body .registerop{
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+  }
+  
+  .registerop button {
+   background-color: #282F36;
+   color: #c2943f;
+   width: 250px;
+  }
+  
+  .registerop button :hover {
+  background-color: #c2943f !important;
+  color: #c2943f !important;
+  }
+  
+  /*Primer row*/
+  body .row{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 55px;
+    text-align: center;
+  }
+  
+  body .row .col-sm-3{
+   display: flex;
+   justify-content: center;
+  }
+  .col-sm-3 .description img{
+    width: 600px;
+    justify-content: center;
+  }
+  
+  
+  /*Segundo row / y botones*/
+  body .row .col-sm-2{
+    justify-self: center;
+    justify-content: center;
+  }
+  
+  .col-sm-2 .btn{
+    background-color: #282F36;
+    color: #e8af4e;
+    width: 130px;
+    padding: 12px;
+    border-radius: 8px;
+    justify-items: center;
+  }
+  
+  /*Estilos del Form*/
+  
+  .input-container button{
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 150px;
+  }
+  
+  
+  .input-container{
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .text-input {
+    padding: 0.8rem;
+    width: 100%;
+    height: 70%;
+    border: 2px solid var(--azul);
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: #c2943f;
+    border: 2px solid var(--dorado);
+    text-align: center;
+  }
+  
+  .text-input:focus {
+    border: 4px solid var(--dorado);
+  }
+  
+  .text-input::placeholder {
+    font-size: 16px;
+    opacity: 0.5;
+    transition: all 0.3s;
+    color: #E8AF4E;
+  }
+  .text-input:focus::placeholder {
+    opacity: 1;
+  }
+  
+  .ingresar .registrarse{
+    background-color: #282F36 !important;
+    color: #e8af4e !important;
+    width: 130px;
+    padding: 12px;
+    border-radius: 8px;
+  }

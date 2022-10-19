@@ -1,0 +1,82 @@
+:root {
+  --oscuro: #000000;
+  --azul: #282F36;
+  --cafe: #5b441d;
+  --dorado: #c2943f;
+  --amarillo: #e8af4e;
+  --blanco: #ffffff;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.subtema {
+  font-size: 32px;
+  color: var(--azul);
+  font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+.dorado {
+color: var(--dorado)
+}
+
+body {
+  background-color: var(--blanco);
+}
+
+.fondo_dorado {
+background-color: #c2943f;
+}
+
+
+.header {
+  margin:auto;
+  justify-content: space-between;
+
+}
+
+
+.dropdown-menu {
+  background-color: #282F36;
+
+}
+
+.dropdown-item {
+  color: #C2943F !important; 
+  font-family: 'Carrois Gothic SC', sans-serif;
+
+}
+
+@media (max-width: 800px) {
+  .portada_contacto {
+    font-size: 20px;
+    width: 80%;
+  }
+}
+
+.texto {
+font-size: 20px;
+font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+#hero {
+  background-image: url("https://res.cloudinary.com/pixel-direction/image/upload/v1664832077/MEXISHOP/artesanias_hoqs72.webp");
+  background-size: cover;
+  padding-top: 90px;
+  min-height: 500px;
+  color: rgb(255, 255, 255);
+}
+#hero1 {
+  background-image: url("https://res.cloudinary.com/pixel-direction/image/upload/v1664833412/MEXISHOP/Buscar-un-socio-consejos.jpg_csfx3j.webp");
+  background-size: cover;
+  padding-top: 90px;
+  min-height: 500px;
+  color: rgb(255, 255, 255);
+}

@@ -1,0 +1,345 @@
+/* Estilos de Imágenes del equipo*/
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.box{
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 15px;
+  margin: 0 auto;
+}
+.card{
+  position: relative;
+  width: 300px;
+  height: 350px;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.card:before,
+.card:after
+{
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: #ddd;
+  transition: 0.5s;
+  z-index:-1;
+}
+.card:hover:before{
+transform: rotate(20deg);
+box-shadow: 0 2px 20px rgba(0,0,0,.2);
+}
+.card:hover:after{
+transform: rotate(10deg);
+box-shadow: 0 2px 20px rgba(0,0,0,.2);
+}
+.card .imgBx{
+position: absolute;
+top: 10px;
+left: 10px;
+bottom: 10px;
+right: 10px;
+background: #222;
+transition: 0.9s;
+z-index: 1;
+}
+
+.card:hover .imgBx
+{
+  bottom: 500px;
+}
+
+.card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .details{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 300px;
+    text-align: center;
+}
+
+.card .details h4{
+ margin: 0;
+ padding: 0;
+ font-weight: 600;
+ font-size: 20px;
+ color: #fff;
+ text-transform: uppercase;
+} 
+
+.card .details h4 span{
+font-size: 15px;
+color: #e8af4e;
+display: block;
+margin-top: 5px;
+ } 
+
+ #descripcion {
+  font-size: 14px;
+ }
+
+ #linkedin {
+  width: 40px;
+ }
+
+#git {
+  width: 45px;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+        /* New Nav bootstrap*/
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Carrois Gothic SC', sans-serif;
+  }
+  
+  .menu-bar {
+     background-color: #282f36;
+     
+  }
+  .nav-link {
+     font-size: 16px;
+     margin: 5px;
+     color: #e8af4e!important;
+     font-weight: 500;
+  }
+  
+  .navbar-nav {
+     text-align: right;
+     margin-right: 20px;
+  }
+  
+  .menu-bar .navbar-toggler {
+     padding-right: 20px;
+     outline: none!important;
+     border: none!important;
+     color: #e8af4e;
+  }
+  
+  .navbar .fa {
+     color: #e8af4e;
+     font-size: 26px;
+  }
+  
+  
+  .nav-link:hover {
+     font-weight: 600;
+     border-bottom: 1px solid #e8af4e;
+  }
+  
+  .navbar-brand img{
+     width: 80px;
+     margin-top: 5px;
+     margin-left: 20px;
+  }
+  @media only screen and (max-width: 1000px) {
+     .nav-link:hover {
+         border-bottom: none!important;
+     }
+  }
+  
+           /*estilos del body*/
+    body {      
+    background-color: white;
+    font-family: 'Carrois Gothic', sans-serif;
+        } 
+
+        h1{
+            font-family: 'Carrois Gothic SC', sans-serif;
+            margin-left: 10%;
+        }
+        .container h2{
+            text-align: center;
+            background-color: #C2943F;
+            width: 33.33%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            margin-left: 33.33%;
+            margin-right: 33.33%;
+            border-radius: 30px;  
+            box-shadow: 0px 4px 4px;
+            font-family: 'Carrois Gothic SC', sans-serif;
+        }
+      
+        @media (max-width: 440px) {
+            .container h2{
+              width: 80%;
+              margin-left: 10%;
+              margin-right: 10%;
+            }          
+        }
+
+        .col h3{
+            text-align: center;
+            background-color: #C2943F;
+            width: 33.33%;
+            margin-left: 33.33%;
+            margin-right: 33.33%;
+            border-radius: 30px;  
+            box-shadow: 0px 4px 4px;
+            font-family: 'Carrois Gothic SC', sans-serif;
+        }
+        .row h3{
+            text-align: center;
+            background-color: #C2943F;
+            width: 33.33%;
+            margin-left: 33.33%;
+            margin-right: 33.33%;
+            border-radius: 30px;  
+            box-shadow: 0px 4px 4px; 
+            margin-top: 5%;
+            margin-bottom: 5%;
+            font-family: 'Carrois Gothic SC', sans-serif;
+        }
+
+        @media (max-width:990px){
+            .row h3 {
+              width: 80%;
+              margin-left: 10%;
+              margin-right: 10%;
+            }
+        }
+
+        .fotoartesano{
+            border-radius: 30px;
+            box-shadow: 0px 4px 4px;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .quienes{
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+            text-align: justify;
+        }
+
+        @media (min-width: 768px) {
+            .quienes{
+            margin-left: 33.33%;
+            margin-right: 33.33%;
+            }
+        }
+
+        h1{
+          margin: 2%;
+        }
+         /*estilos del footer*/
+ footer{
+    height: 70px;
+    background-color: #282F36;
+  }
+  .flex-container{
+      
+    flex-direction: column;
+    float: right;
+    color: #E8AF4E;
+    justify-content: center;
+    padding: 1px;
+  }
+  
+  .seguir .ya{
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    margin: 0px;    
+  }
+  .facebook {
+  padding-left: 22px;              
+  padding-left: 10px;         
+    
+    
+  }   
+  .facebook:hover{
+  transition: transform 0.3s;
+  transform: scale(1.5);
+  
+  }
+  a.nav-link img{
+    width: 30px;
+    padding: 2px;
+  }
+  .navimg:hover{
+    transition: transform 0.2s;
+    transform: scale(1.5);
+  
+  }
+  
+  .copy p{
+    padding-left: 15px;
+    padding-top: 22px;
+    float: left;
+    color: #E8AF4E;
+    font-size: 16px;
+  }
+  
+  .seguir .ya{
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    margin: 0px;    
+  }
+  
+  .dropdown-menu {
+    background-color: #282F36;
+  
+  }
+  
+  .dropdown-item {
+    color: #C2943F !important; 
+    font-family: 'Carrois Gothic SC', sans-serif;
+  
+  }
+
+  @media (max-width: 680px) {
+    .copy p{
+      font-size: 12px;
+      width: 65%;
+    }
+  
+    .ya {
+      font-size: 12px;
+    }
+  }
+
+  /*card-body*/
+
+  .card{
+    background-color: #282F36;
+    color: #FFFFFF;
+    margin-bottom: 30%;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px #C2943F;
+  }
+
+
