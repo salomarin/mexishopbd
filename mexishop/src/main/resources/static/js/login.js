@@ -9,7 +9,7 @@ let flag =0;
 btnLink.addEventListener("click", function (i) {
     i.preventDefault();
 
-    window.location.href="http://localhost:8080/pages/registrousuario.html"
+    location.href="/pages/registrousuario.html"
 });
 
 button.addEventListener("click", function (e) {
@@ -60,7 +60,7 @@ fetch("http://localhost:8080/api/login/", {
               })
               .then((result)=>{
                 if(result.isConfirmed){
-                    window.location.assign("http://localhost:8080/index.html/")
+				window.location.assign("http://"+window.location.host+"/")
                 }
               })
 	} else {

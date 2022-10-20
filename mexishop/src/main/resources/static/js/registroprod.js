@@ -8,7 +8,7 @@
     let btnagregar = document.getElementById("btnSubmit");
     let preview = document.getElementById("Preview");
     let btnPreview = document.getElementById("btnMostrar");
-    let inventario=[];
+    let urlallprod="/api/productos/"
     /*  Titulo de tabla */
     tabla.innerHTML += `<thead class="thead-dark">
     <tr>
@@ -114,129 +114,164 @@
         }
     }); //btnPreview
 
-btnagregar.addEventListener("click", function(e) {
-    e.preventDefault();
+	btnagregar.addEventListener("click", function(e) {
+	    e.preventDefault();
+	
+	let item = {"product_id":id.value, 
+	        "prod_nombr":nameprod.value,
+	        "prod_Link": img.value,
+	        "prod_desc":comment.value,
+	        "precio_prod": cost.value,
+	        "categorias_cate_id": parseInt(String(id.value).charAt(0)),
+	        "inventario_cant":1
+	       }   
+	
+	    if ((id.value.length==4) 
+	        && 
+	        (! isNaN(id.value))
+	    ) {
+	        id.classList.remove("is-invalid");
+	        id.classList.add("is-valid");
+	    } else {
+	        id.classList.remove("is-valid");
+	        id.classList.add("is-invalid");
+	    } // ID validacion
+	
+	
+	    if (nameprod.value.length >=6)  {
+	        nameprod.classList.remove("is-invalid");
+	        nameprod.classList.add("is-valid");
+	    } else {
+	        nameprod.classList.remove("is-valid");
+	        nameprod.classList.add("is-invalid");
+	    } //If Product Name
+	
+	    if (img.value.length >=10)  {
+	        img.classList.remove("is-invalid");
+	        img.classList.add("is-valid");
+	    } else {
+	        img.classList.remove("is-valid");
+	        img.classList.add("is-invalid");
+	    } //If URL Img
+	
+	    if ((cost.value.length>=3) 
+	        && 
+	        (! isNaN(cost.value))
+	    ) {
+	        cost.classList.remove("is-invalid");
+	        cost.classList.add("is-valid");
+	    } else {
+	        cost.classList.remove("is-valid");
+	        cost.classList.add("is-invalid");
+	    } // validacion Costo
+	
+	    if (comment.value.length >=30)  {
+	        comment.classList.remove("is-invalid");
+	        comment.classList.add("is-valid");
+	    } else {
+	        comment.classList.remove("is-valid");
+	        comment.classList.add("is-invalid");
+	    } //If Descripcion
+	
+	    if ((id.value.length==4) 
+	        && 
+	        (! isNaN(id.value))
+	        &&
+	        (nameprod.value.length >=6)
+	        &&
+	        (img.value.length >=10)
+	        &&
+	        (cost.value.length>=3) 
+	        && 
+	        (! isNaN(cost.value))
+	        &&
+	        (comment.value.length >=30)) {
+	        //mandar información a localstorage
+	        Swal.fire({
+	            position: 'center',
+	            icon: 'success',
+	            title: 'Se ha añadido producto a la lista',
+	            showConfirmButton: false,
+	            timer: 1500,
+	            background: '#282F36', 
+	            color: '#C2943F'
+	          })
+		
+		
+		let token = JSON.parse (localStorage.getItem("token"));
+		
+		if(token!=null){
+		
+		fetch(urlallprod, {
+		  method: 'POST',
+		  headers: {
+		    'Content-Type': 'application/json',
+		    "Authorization":"Bearer: " + token.accesToken
+		  },
+		  body: JSON.stringify(item),
+		})
+		  .then((response) => response.json())
+		  .then((data) => {
+			console.log(data)
+		  })
+		  .catch((error) => {
+		    console.error('Error:', error);
+		  });
+		 }//if token!=null
+		 else{
+			Swal.fire({
+	            position: 'center',
+	            icon: 'error',
+	            title: 'Usted no ha ingresado como administrador',
+	            showConfirmButton: false,
+	            timer: 1500,
+	            background: '#282F36', 
+	            color: '#C2943F'})
+		}
+	        
+	            preview.style.display="none"
+	            id.value=null
+	            nameprod.value=null
+	            img.value=null
+	            comment.value=null
+	            cost.value=null
+	            
 
-let item = {"id":"", 
-        "name":"",
-        "img": "",
-        "description":"",
-        "precio": ""
-       }
-
-         item.name = nameprod.value;
-         item.id = id.value;
-         item.img = img.value;
-         item.description = comment.value;
-         item.precio = cost.value;    
-
-    if ((id.value.length==4) 
-        && 
-        (! isNaN(id.value))
-    ) {
-        id.classList.remove("is-invalid");
-        id.classList.add("is-valid");
-    } else {
-        id.classList.remove("is-valid");
-        id.classList.add("is-invalid");
-    } // ID validacion
-
-
-    if (nameprod.value.length >=6)  {
-        nameprod.classList.remove("is-invalid");
-        nameprod.classList.add("is-valid");
-    } else {
-        nameprod.classList.remove("is-valid");
-        nameprod.classList.add("is-invalid");
-    } //If Product Name
-
-    if (img.value.length >=10)  {
-        img.classList.remove("is-invalid");
-        img.classList.add("is-valid");
-    } else {
-        img.classList.remove("is-valid");
-        img.classList.add("is-invalid");
-    } //If URL Img
-
-    if ((cost.value.length>=3) 
-        && 
-        (! isNaN(cost.value))
-    ) {
-        cost.classList.remove("is-invalid");
-        cost.classList.add("is-valid");
-    } else {
-        cost.classList.remove("is-valid");
-        cost.classList.add("is-invalid");
-    } // validacion Costo
-
-    if (comment.value.length >=30)  {
-        comment.classList.remove("is-invalid");
-        comment.classList.add("is-valid");
-    } else {
-        comment.classList.remove("is-valid");
-        comment.classList.add("is-invalid");
-    } //If Descripcion
-
-    if ((id.value.length==4) 
-        && 
-        (! isNaN(id.value))
-        &&
-        (nameprod.value.length >=6)
-        &&
-        (img.value.length >=10)
-        &&
-        (cost.value.length>=3) 
-        && 
-        (! isNaN(cost.value))
-        &&
-        (comment.value.length >=30)) {
-        //mandar información a localstorage
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Se ha añadido producto a la lista',
-            showConfirmButton: false,
-            timer: 1500,
-            background: '#282F36', 
-            color: '#C2943F'
-          })
-    
-    inventario.push(item)
-    localStorage.setItem("catalogo", JSON.stringify(inventario))
-
-    let tmp = JSON.parse(localStorage.getItem("catalogo"))
-        tmp.forEach(element => {
-            tabla.innerHTML += `<tbody>
-            <tr>
-              <th scope="row">${element.id}</th>
-              <td>${element.name}</td>
-              <td class="size">${element.img}</td>
-              <td>${element.precio}</td>
-              <td>${element.description}</td>
-            </tr>`
-        
-            preview.style.display="none"
-            id.value=null
-            nameprod.value=null
-            img.value=null
-            comment.value=null
-            cost.value=null
-            
-        });
-    }//if de validacion
-    else{
-        Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'Por favor, ingrese los datos completos y correctos de nuevo',
-            showConfirmButton: false,
-            timer: 1500,
-            background: '#282F36', 
-            color: '#C2943F'
-          })
-    }
-
-    
-
-});// btn Agregar
+	    }//if de validacion
+	    else{
+	        Swal.fire({
+	            position: 'center',
+	            icon: 'error',
+	            title: 'Por favor, ingrese los datos completos y correctos de nuevo',
+	            showConfirmButton: false,
+	            timer: 1500,
+	            background: '#282F36', 
+	            color: '#C2943F'
+	          })
+	    }
+	
+	    
+	
+	});// btn Agregar
+	
+	let promise = fetch(urlallprod,{
+      method:"GET"
+    });//fetch
+    promise.then( (response) => {
+            response.json().then((data)=>{
+      			data.forEach(element => {
+	            tabla.innerHTML += `<tbody>
+	            <tr>
+	              <th scope="row">${element.product_id}</th>
+	              <td>${element.prod_nombr}</td>
+	              <td class="size">${element.prod_Link}</td>
+	              <td>${element.precio_prod}</td>
+	              <td>${element.prod_desc}</td>
+	            </tr>`});//foreach
+            }).catch( (error) =>{
+              console.error(error);
+          });
+      }).catch((error) =>{
+        console.error("Error en la solicitud " + error);
+    });
 

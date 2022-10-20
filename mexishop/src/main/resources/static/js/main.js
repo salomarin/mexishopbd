@@ -12,8 +12,10 @@ window.addEventListener("load", function(){
 
 /*        Función para obtener información del json                */
 
+let url1 = "/api/productos/"
+
 const getData = () =>{
-    let promise = fetch("http://localhost:8080/api/productos/",{
+    let promise = fetch(url1,{
       method:"GET"
     });//fetch
     promise.then( (response) => {
