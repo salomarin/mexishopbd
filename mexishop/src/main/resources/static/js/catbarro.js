@@ -28,7 +28,8 @@ function addItem(div, item){
         </button>
       </div>
       <div class="modal-body">
-      ${item.prod_desc}
+      ${item.prod_desc}<br/>
+      <strong>$ ${item.precio_prod} (MXN)</strong>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
@@ -47,14 +48,13 @@ window.addEventListener("DOMContentLoaded", function () {
   } 
   })
   
-  
+let urlc3 = "/api/productos/"
 const printData = () =>{
-    let promise = fetch("http://localhost:8080/api/productos/",{
+    let promise = fetch(urlc3,{
       method:"GET"
     });//fetch
     promise.then( (response) => {
             response.json().then((data)=>{
-                    console.log(data);
                    data.forEach(element => {
                     if (element.categorias_cate_id ==3){
                           if (String(element.product_id).charAt(3)%3==0) {
@@ -64,7 +64,7 @@ const printData = () =>{
                           } else {
                                 addItem(itemsCont3, element)
                           }
-                    }//if alebrijes id start=1
+                    }//if barro y cerámica categoria
                     
                   }); //forEach
             }).catch( (error) =>{
@@ -75,36 +75,6 @@ const printData = () =>{
     });
       
 }//printData
-
-
-/*   const getData = () =>{
-      let promise = fetch("http://127.0.0.1:5500/data.json",{
-        method:"GET"
-      });//fetch
-      promise.then( (response) => {
-              response.json().then((data)=>{
-                      console.log(data);
-                     data.forEach(element => {
-                      if (element.id.charAt(0)==3){
-                            if (element.id.charAt(3)%3==0) {
-                                  addItem(itemsCont1, element)
-                            } else if (element.id.charAt(3)%3==1){
-                                  addItem(itemsCont2, element)
-                            } else {
-                                  addItem(itemsCont3, element)
-                            }
-                      }//if alebrijes id start=1
-                      
-                    }); //forEach
-              }).catch( (error) =>{
-                console.error(error);
-            });
-        }).catch((error) =>{
-          alert("Error en la solicitud " + error);
-      });
-        
-  }//getData */
-
 
   itemsCont1.addEventListener("click", function(e){
     e.preventDefault();

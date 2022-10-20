@@ -11,7 +11,7 @@ let usuarios = []
 btnLink.addEventListener("click", function (i) {
     i.preventDefault();
 
-    window.location.assign("http://localhost:8080/pages/login.html")
+    location.href="/pages/login.html"
 });
 
 
@@ -90,30 +90,26 @@ if ((nombre.value.length>=3)
         && 
         (cont>0)
         &&
-        (contra.value.length >=8)
-        
-        
+        (contra.value.length >=8)   
     ){
 	
-	
-	let token = JSON.parse (localStorage.getItem("token"));
-	const usuario = { "nombre": nombre.value };
+	let url = "/api/user/";
+	const usuario = { "nombre": nombre.value, "email": email.value, "tel":Telefono.value, "contrasena":contra.value };
 
-fetch('https://example.com/profile', {
-  method: 'POST', // or 'PUT'
-  headers: {
-    'Content-Type': 'application/json',
-    "Authorization":"Bearer: " + token.accesToken
-  },
-  body: JSON.stringify(usuario),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+	fetch(url, {
+	  method: 'POST',
+	  headers: {
+	    'Content-Type': 'application/json',
+	   // "Authorization":"Bearer: " + token.accesToken
+	  },
+	  body: JSON.stringify(usuario),
+	})
+	  .then((response) => response.json())
+	  .then((data) => {
+	  })
+	  .catch((error) => {
+	    console.error('Error:', error);
+	  });
 
 	
     Swal.fire({
@@ -125,20 +121,6 @@ fetch('https://example.com/profile', {
         background: '#282F36', 
         color: '#C2943F',    
           })
-
-
-    
-  
-
-    let item = {"nombre": nombre.value, 
-        "telefono": Telefono.value,
-        "email": email.value,
-        "contrasena":contra.value
-       }
-
-       usuarios.push(item)
-       let tmp = JSON.stringify(usuarios)
-       localStorage.setItem("users", tmp)
     } else {
         Swal.fire({
             position: 'center',

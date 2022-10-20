@@ -17,14 +17,16 @@ window.addEventListener("load", function(){
 
 /*        Función para obtener información del json                */
 
+let urlcar = "/api/productos/";
+
 const printData = () =>{
-    let promise = fetch("http://127.0.0.1:5500/data.json",{
+    let promise = fetch(urlcar,{
       method:"GET"
     });//fetch
     promise.then( (response) => {
             response.json().then((data)=>{
                     data.forEach(element => {
-                    if (element.id.charAt(3)==5){
+                    if (String(element.product_id).charAt(3)==5){
                           addItem(tarjeta, element)
                     }//if para añadir productos más vendidos
                     
@@ -42,12 +44,12 @@ const printData = () =>{
 
 function addItem(div, item){
     const itemHTML = `<div class="card" style="width: 18rem;">
-            <img src="${item.img}" class="card-img-top" alt="image">
+            <img src="${item.prod_Link}" class="card-img-top" alt="image">
             <div class="card-body">
-                <h5 class="card-title">${item.name}</h5> 
-                <p class="card-text">${item.description.slice(0,20)}...<br>
-                <strong>$ ${item.precio} (MXN)</strong></p>   
-                <button type="button" class="btn" data-toggle="modal" data-target="#modalItem_${item.id}">
+                <h5 class="card-title">${item.prod_nombr}</h5> 
+                <p class="card-text">${item.prod_desc.slice(0,20)}...<br>
+                <strong>$ ${item.precio_prod} (MXN)</strong></p>   
+                <button type="button" class="btn" data-toggle="modal" data-target="#modalItem_${item.product_id}">
                  Ver más 
                 </button>
                 <a href="/pages/carrito.html" class="btn btnAdd">Añadir a carrito</a> 
@@ -55,7 +57,7 @@ function addItem(div, item){
         </div> 
         <br/>
         <!-- Modal -->
-<div class="modal fade" id="modalItem_${item.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalItem_${item.product_id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -65,8 +67,8 @@ function addItem(div, item){
         </button>
       </div>
       <div class="modal-body">
-      ${item.description} <br/>
-      <strong>$ ${item.precio} (MXN)</strong>
+      ${item.prod_desc} <br/>
+      <strong>$ ${item.precio_prod} (MXN)</strong>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn" data-dismiss="modal">Cerrar</button>

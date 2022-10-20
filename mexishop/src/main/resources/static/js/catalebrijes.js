@@ -29,7 +29,8 @@ function addItem(div, item){
         </button>
       </div>
       <div class="modal-body">
-      ${item.prod_desc}
+      ${item.prod_desc}<br/>
+      <strong>$ ${item.precio_prod} (MXN)</strong>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
@@ -47,31 +48,14 @@ window.addEventListener("load", function () {
 }
 })
 
-/*const printData = () => {
-      let data = JSON.parse(localStorage.getItem("catalogo"));
-      data.forEach(element => {
-        if (element.id.charAt(0)==1){
-              if (element.id.charAt(3)%3==0) {
-                    addItem(itemsCont1, element)
-              } else if (element.id.charAt(3)%3==1){
-                    addItem(itemsCont2, element)
-              } else {
-                    addItem(itemsCont3, element)
-              }
-        }//if alebrijes id start=1
-        
-      }); //forEach
-}//funcion printData*/
 
-
-
+let urlc1 = "/api/productos/"
  const printData = () =>{
-    let promise = fetch("http://localhost:8080/api/productos/",{
+    let promise = fetch(urlc1,{
       method:"GET"
     });//fetch
     promise.then( (response) => {
             response.json().then((data)=>{
-                    console.log(data);
                    data.forEach(element => {
                     if (element.categorias_cate_id ==1){
                           if (String(element.product_id).charAt(3)%3==0) {
@@ -81,7 +65,7 @@ window.addEventListener("load", function () {
                           } else {
                                 addItem(itemsCont3, element)
                           }
-                    }//if alebrijes id start=1
+                    }//if alebrijes categoria
                     
                   }); //forEach
             }).catch( (error) =>{
