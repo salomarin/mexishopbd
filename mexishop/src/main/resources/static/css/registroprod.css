@@ -1,0 +1,261 @@
+ /*estilos del body*/
+ 
+ h2 {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+
+}
+
+ :root {
+    --oscuro: #000000;
+    --azul: #282F36;
+    --cafe: #5b441d;
+    --dorado: #c2943f;
+    --amarillo: #e8af4e;
+    --blanco: #ffffff;
+   }
+
+   body{
+    background: rgba(0, 0, 0, 0.5) !important;
+
+   }
+  
+  .row .col-sm-6{
+    background: rgba(0, 0, 0, 0.75) !important;
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: space-between;
+  
+  }
+  
+  .col-sm-6 .texto{
+  display: flex;
+  color: #ffffff;
+  }
+  
+  .contacto {
+    background-image: url(../src/mixing-clay-for-pottery-pot.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20cm;
+/*     -webkit-backface-visibility: var(--blanco); */
+    width: 90%; 
+    padding: 25px;
+    margin: auto;
+  } 
+  
+  .contacto h1{
+
+    background: rgba(0, 0, 0, 0.8) !important;
+    padding: 20px;
+    border-radius: 10px;
+    color: #e8af4e;
+  }  
+
+  .contacto h3{
+    color: #e8af4e;
+  }  
+  .contacto h4{
+    color: #e8af4e;
+  } 
+  .contacto p{
+    color: #ffffff;
+  }   
+  
+  .text-input {
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--azul);
+    background: var(--azul);
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: var(--dorado);
+    border: 2px solid var(--dorado);
+  }
+  
+  .text-input:focus {
+    border: 4px solid var(--dorado);
+  }
+  
+  .text-input::placeholder {
+    font-size: 16px;
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+  .text-input:focus::placeholder {
+    opacity: 1;
+  }
+  
+  /* New Nav bootstrap*/
+  * {
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  }
+  
+  .menu-bar {
+   background-color: #282f36;
+   
+  }
+  .nav-link {
+   font-size: 16px;
+   margin: 5px;
+   color: #e8af4e!important;
+   font-weight: 500;
+  }
+  
+  .navbar-nav {
+   text-align: right;
+   margin-right: 20px;
+  }
+  
+  .menu-bar .navbar-toggler {
+   padding-right: 20px;
+   outline: none!important;
+   border: none!important;
+   color: #e8af4e;
+  }
+  
+  .navbar .fa {
+   color: #e8af4e;
+   font-size: 26px;
+  }
+  
+  
+  .nav-link:hover {
+   font-weight: 600;
+   border-bottom: 1px solid #e8af4e;
+  }
+  
+  .navbar-brand img{
+   width: 80px;
+   margin-top: 5px;
+   margin-left: 20px;
+  }
+  @media only screen and (max-width: 1000px) {
+   .nav-link:hover {
+       border-bottom: none!important;
+   }
+  }
+  
+  /*estilos del footer*/
+  footer{
+  height: 70px;
+  background-color: #282F36;
+  }
+  .flex-container{
+    
+  flex-direction: column;
+  float: right;
+  color: #E8AF4E;
+  justify-content: center;
+  padding: 1px;
+  }
+  
+  .seguir .ya{
+  padding-right: 15px;
+  padding-top: 8px;
+  padding-bottom: 0px;
+  margin: 0px;    
+  }
+  .facebook {
+  padding-left: 22px;              
+  padding-left: 10px;         
+  
+  
+  }   
+  .facebook:hover{
+  transition: transform 0.3s;
+  transform: scale(1.5);
+  
+  }
+  a.nav-link img{
+  width: 30px;
+  padding: 2px;
+  }
+  
+  .navimg:hover{
+  transition: transform 0.2s;
+  transform: scale(1.5);
+  
+  }
+  
+  .copy p{
+  padding-left: 15px;
+  padding-top: 22px;
+  float: left;
+  color: #E8AF4E;
+  font-size: 16px;
+  }
+  
+  .seguir .ya{
+  padding-right: 15px;
+  padding-top: 8px;
+  padding-bottom: 0px;
+  margin: 0px;    
+  }
+  
+  @media (max-width: 680px) {
+  .copy p{
+    font-size: 12px;
+    width: 65%;
+  }
+  
+  .ya {
+    font-size: 12px;
+  }
+  }
+  
+   /* Estilos de cards*/
+.card{
+  border-color: #FFFFFF;
+  box-shadow: 0px 2px 2px rgb(219, 219, 219);
+  margin-bottom: 3%;
+  }
+  .card p{
+    border-color: #FFFFFF;
+    color: #000000;
+    }
+  
+  .card:hover{
+      box-shadow: 4px 4px 4px rgb(219, 219, 219);
+  }
+  
+  .btn{
+  background-color: #282F36;
+  color: #E8AF4E !important;
+  margin: 1%;
+  }
+  
+  .btn:hover{
+  color: #FFFFFF !important;
+  background-color: #282F36 !important;
+  }
+
+  section{
+    justify-content: center;
+  }
+
+  div #Preview{
+    display: flex;
+    justify-content: center !important;
+    justify-items: center !important;
+    color: #000000;
+    }
+    
+    section{
+      color: #FFFFFF !important;
+    }
+
+td .size{
+  width: 100px;
+}
